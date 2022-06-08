@@ -1,0 +1,22 @@
+package InputOutput;
+
+import java.io.File;
+import java.io.FilenameFilter;
+
+// Directory of .HTML files.
+public class DirListOnly {
+
+	public static void main(String[] args) {
+		String dirname = "java";
+		File f1 = new File(dirname);
+		FilenameFilter only = new OnlyExt("txt");
+		String[] s = f1.list(only);
+		
+		System.out.println("Size: " + s.length);
+		for(int i = 0; i < s.length; i++) {
+			System.out.println(s[i]);
+		}
+
+	}
+
+}
